@@ -1,4 +1,4 @@
-print("hi Python☻")
+print("hi Py thon☻")
 print(65 + 8)
 print(65 - 8)
 print(2**4)
