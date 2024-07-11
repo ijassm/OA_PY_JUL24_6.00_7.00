@@ -31,3 +31,33 @@
 
 
 # print("234243")
+
+# Logical operator
+
+# print(3 > -5 and 0 > -89897)
+# print(3 > 5 and 0 > -89897)
+
+# print(3 > -5 or 0 > -89897)
+# print(3 > 5 or 0 > 89897)
+
+# print(not 3 > -5 or 0 > -89897)
+# print(not (not 3 > -5 or 0 > -89897))
+# print(3 > 5 or 0 > 89897)
+
+
+# Membership operator
+
+# print("" in "Members")
+# print("a    " not in "Members")
+
+# Identity operator
+
+# a = [1, 2]
+# b = a
+
+# print(a is b)
+# print(a is not b)
+# print(a == b)
+
+# print(id(a), "a")
+# print(id(b), "b")
