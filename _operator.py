@@ -28,6 +28,7 @@
 # print(1 != 1)
 # print(1 == 1)
 # print(1 == "1")
+# print(10 > int("1"))
 
 
 # print("234243")
