@@ -4,9 +4,9 @@ c = 0
 
 
 # Function declaration
-def sum(x, y):
-    global c
-    c = x + y
+# def sum(x, y):
+#     global c
+#     c = x + y
 
 
 # Function call
@@ -18,6 +18,26 @@ def sum(x, y):
 # sum(3, 4)
 
 
-sum(a, b)
+# sum(a, b)
 
-print(c)
+# print(c)
+
+
+# function return
+
+
+def sum(x, y):
+    return x + y
+
+
+def sub(x, y):
+    return x - y
+
+
+# a = sum(5, 8)
+# b = sub(51, 8)
+c = sum(5, 8) * sub(51, 8)
+
+# print("a = ", a)
+# print("b = ", b)
+print("c = ", c)
