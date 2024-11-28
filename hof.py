@@ -1,3 +1,6 @@
+# importing functools for reduce()
+from functools import reduce
+
 l1 = [2, 5, 6, 8]
 l2 = [2, 58]
 l3 = [2, 5, 6]
@@ -79,17 +82,60 @@ def hof(logicFunc, l):
 # t1 = hof(lambda i: i * 3, l1)
 # q1 = hof(lambda i: i * 4, l1)
 
-d1 = list(map(lambda i: i * 2, l1))
-t1 = list(map(lambda i: i * 3, l1))
-q1 = list(map(lambda i: i * 4, l1))
+# d1 = tuple(map(lambda i: i * 2, l1))
+# t1 = list(map(lambda i: i * 3, l1))
+# q1 = list(map(lambda i: i * 4, l1))
 
 
-print("\nDouble🎈🎈")
-print(l1, d1)
-print("\nTriple🎈🎈")
-print(l1, t1)
-print("\nQuadruple🎈🎈")
-print(l1, q1)
+# print("\nDouble🎈🎈")
+# print(l1, d1)
+# print("\nTriple🎈🎈")
+# print(l1, t1)
+# print("\nQuadruple🎈🎈")
+# print(l1, q1)
 # print(d2)
 # print(t1)
 # print(q1)
+
+
+# reduce
+
+
+# def sum(l):
+#     acc = 0
+
+#     for i in l:
+#         acc += i
+
+#     return acc
+
+
+def myReduce(logicFunc, l1, initialValue=None):
+    acc = initialValue
+    if initialValue == None:
+        acc = l1[0]
+        l1 = l1[1:]
+
+    for i in l1:
+        returnValue = logicFunc(acc, i)
+        if returnValue != None:
+            acc = returnValue
+    return acc
+
+
+def logicFunc(acc, cv):
+    # print("accumalator", acc)
+    # print("current value", cv)
+    # print()
+    return acc * cv
+
+
+print(l1)
+# s1 = reduce(logicFunc, l2)
+# s2 = myReduce(logicFunc, l2)
+s1 = reduce(lambda acc, cv: acc * cv, l2)
+s2 = myReduce(lambda acc, cv: acc * cv, l2)
+# s = sum(l1)
+# print("s", s)
+print("s1", s1)
+print("s2", s2)
