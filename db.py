@@ -1,10 +1,11 @@
 
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
+from bson import ObjectId
 
 
-username = "enter your username"
-password = "enter your password"
+username = "ijass"
+password = "sYWtm6bA2X5UBm8F"
 
 uri = f"mongodb+srv://{username}:{password}@students.jooqal4.mongodb.net/?retryWrites=true&w=majority&appName=STUDENTS"
 
@@ -27,6 +28,12 @@ tasks = db["tasks"]
 
 # Read
 
-data = list(tasks.find())
+data = list(tasks.find({}, {"_id": 0, "title" : 1}).sort("title", -1))
 
 print(data)
+
+# completed_Tasks = list(tasks.find({"status" : "completed"}))
+
+# data = tasks.find_one({"_id" : ObjectId("6707b150e8007e634f5d4742")})
+
+# print(completed_Tasks)
