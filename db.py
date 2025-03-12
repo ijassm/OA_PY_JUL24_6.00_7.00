@@ -4,8 +4,8 @@ from pymongo.server_api import ServerApi
 from bson import ObjectId
 
 
-username = "ijass"
-password = "sYWtm6bA2X5UBm8F"
+username = "Enter your username"
+password = "Enter your password"
 
 uri = f"mongodb+srv://{username}:{password}@students.jooqal4.mongodb.net/?retryWrites=true&w=majority&appName=STUDENTS"
 
@@ -28,12 +28,21 @@ tasks = db["tasks"]
 
 # Read
 
-data = list(tasks.find({}, {"_id": 0, "title" : 1}).sort("title", -1))
+# data = list(tasks.find({}, {"_id": 0, "title" : 1}).sort("title", -1))
 
-print(data)
+# print(data)
 
 # completed_Tasks = list(tasks.find({"status" : "completed"}))
 
 # data = tasks.find_one({"_id" : ObjectId("6707b150e8007e634f5d4742")})
 
 # print(completed_Tasks)
+
+# Create
+
+# tasks.insert_one({"title" : "Task 1", "status" : "pending"})
+# tasks.insert_many([{"title" : "Task 2", "status" : "pending"}, {"title" : "Task 3", "status" : "completed"}])
+
+# Update
+# tasks.update_one({"_id" : ObjectId("678bbc7de80b960cd7ebd29a")}, {"$set" : {"status" : "pending"}})
+# tasks.update_many({"status" : "pending"}, {"$set" : {"status" : "completed"}})
