@@ -1,11 +1,10 @@
-
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from bson import ObjectId
 
 
-username = "Enter your username"
-password = "Enter your password"
+username = "ijass"
+password = "sYWtm6bA2X5UBm8F"
 
 uri = f"mongodb+srv://{username}:{password}@students.jooqal4.mongodb.net/?retryWrites=true&w=majority&appName=STUDENTS"
 
@@ -28,21 +27,39 @@ tasks = db["tasks"]
 
 # Read
 
-# data = list(tasks.find({}, {"_id": 0, "title" : 1}).sort("title", -1))
+# filter = {"title" : 1}
 
-# print(data)
+# data = list(tasks.find({}).sort("title", -1))
 
-# completed_Tasks = list(tasks.find({"status" : "completed"}))
+# completed_Tasks = list(tasks.find({"status" : "pending"}))
+
+# for i in completed_Tasks:
+#     print("------------------------")
+#     print("Id: ", i["_id"])
+#     print("Title: ", i["title"])
+#     print("Status: ", i["status"])
+
 
 # data = tasks.find_one({"_id" : ObjectId("6707b150e8007e634f5d4742")})
 
-# print(completed_Tasks)
+# print(data)
 
 # Create
 
-# tasks.insert_one({"title" : "Task 1", "status" : "pending"})
-# tasks.insert_many([{"title" : "Task 2", "status" : "pending"}, {"title" : "Task 3", "status" : "completed"}])
+# tasks.insert_one({"title" : "complete python class", "status" : "pending"})
+# tasks.insert_many(
+#     [
+#         {"title" : "Task 2", "status" : "pending"}, 
+#         {"title" : "Task 3", "status" : "completed"}
+#     ])
 
 # Update
-# tasks.update_one({"_id" : ObjectId("678bbc7de80b960cd7ebd29a")}, {"$set" : {"status" : "pending"}})
-# tasks.update_many({"status" : "pending"}, {"$set" : {"status" : "completed"}})
+# tasks.update_one({"_id" : ObjectId("67d2d0d81c693f69cb0f804c")}, {"$set" : {"status" : "completed"}})
+# tasks.update_many({"status" : "completed"}, {"$set" : {"status" : "pending"}})
+
+#Delete
+# tasks.delete_one({"_id" : ObjectId("678bb99937e8ecef4d5ceafc")})
+# tasks.delete_many({"status" : "completed"})
+# tasks.delete_many({})  !!!! Delete document with concise !!!!
+
+# tasks.drop() # Delete the collection
