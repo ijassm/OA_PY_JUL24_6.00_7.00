@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    <h1 class="title">Hello</h1>
+    <h3 id="sub-title">1</h3>
+    <input type="text" name="username" />
+    <input type="text" name="name" />
+    <script>
+      //   console.log(document); // Accessing the document object
+      //   console.log(document.body); // Accessing the body element
+      //   console.log(document.head); // Accessing the head element
+
+      const doc = document; // Storing the document object in a variable
+
+      //   console.log(doc.getElementsByTagName("h1")); // Accessing all <h1> elements
+      //   console.log(doc.getElementsByTagName("h1")[0]); // Accessing all <h1> elements
+
+      //   console.log(doc.getElementsByClassName("title")); // Accessing all elements with class "title"
+      //   console.log(doc.getElementsByClassName("title")[0]); // Accessing the first element with class "title"
+
+      //   console.log(doc.getElementsByName("username")); // Accessing all elements with name "username"
+      //   console.log(doc.getElementsByName("username")[0]); // Accessing the first element with name "username"
+
+      //   console.log(doc.getElementById("sub-title")); // Accessing the element with id "sub-title"
+
+      //   console.log(doc.querySelector("h1")); // Accessing the first <h1> element
+      //   console.log(doc.querySelectorAll("h1")); // Accessing all <h1> elements
+
+      //   console.log(doc.querySelector(".title")); // Accessing the first <h1> element
+      //   console.log(doc.querySelector("#sub-title")); // Accessing the first <h1> element
+
+      //   console.log(doc.querySelector("input[name='username']")); // Accessing the first <h1> element
+      //   console.log(doc.querySelectorAll("input[name='username']")); // Accessing the first <h1> element
+
+      //   const h1 = doc.querySelector("h1"); // Accessing the first <h1> element
+
+      //   h1.style.color = "red"; // Changing the color of the first <h1> element to red
+      //   h1.textContent = "DOM"; // Changing the text content of the first <h1> element to "SOM"
+
+      const p = doc.createElement("p"); // Creating a new <p> element
+
+      p.textContent = "Hello JS";
+      p.style.color = "red";
+
+      console.log(p);
+
+      doc.body.appendChild(p); // Appending the new <p> element to the body
+    </script>
+  </body>
+</html>
