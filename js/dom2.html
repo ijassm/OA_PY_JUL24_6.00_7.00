@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .card-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .card {
+        padding: 10px;
+        background-color: aliceblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="count">0</h1>
+    <button onclick="increment()">Click</button>
+    <script>
+      const data = [
+        { name: "John", age: 30 },
+        { name: "Jane", age: 25 },
+        { name: "Doe", age: 35 },
+        { name: "John", age: 30 },
+        { name: "Jane", age: 25 },
+        { name: "Doe", age: 35 },
+        { name: "John", age: 30 },
+        { name: "Jane", age: 25 },
+        { name: "Doe", age: 35 },
+        { name: "John", age: 30 },
+        { name: "Jane", age: 25 },
+        { name: "Doe", age: 35 },
+      ];
+
+      const cardWrapper = document.createElement("main");
+      cardWrapper.className = "card-wrapper";
+
+      data.forEach((item) => {
+        const card = document.createElement("section");
+        card.className = "card";
+
+        const name = document.createElement("h2");
+        name.textContent = `Name : ${item.name}`;
+
+        const age = document.createElement("p");
+        age.textContent = `Age : ${item.age}`;
+
+        card.append(name, age);
+        cardWrapper.appendChild(card);
+      });
+
+      document.body.appendChild(cardWrapper);
+
+      function increment() {
+        const h1 = document.querySelector("h1.count");
+
+        h1.textContent = Number(h1.textContent) + 1;
+      }
+    </script>
+  </body>
+</html>
