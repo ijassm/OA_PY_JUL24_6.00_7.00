@@ -22,7 +22,8 @@
   </head>
   <body>
     <h1 class="count">0</h1>
-    <button onclick="increment()">Click</button>
+    <button class="increment-btn" onclick="increment()">Increment</button>
+    <button class="decrement-btn">Decrement</button>
     <script>
       const data = [
         { name: "John", age: 30 },
@@ -63,6 +64,16 @@
 
         h1.textContent = Number(h1.textContent) + 1;
       }
+
+      const decrementBtn = document.querySelector("button.decrement-btn");
+
+      decrementBtn.addEventListener("click", () => {
+        const h1 = document.querySelector("h1.count");
+
+        h1.textContent = Number(h1.textContent) - 1;
+      });
+
+      console.log(decrementBtn);
     </script>
   </body>
 </html>
