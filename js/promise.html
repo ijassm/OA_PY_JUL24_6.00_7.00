@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let willAttendClass = false;
+      const willAttendPromise = new Promise((resolve, reject) => {
+        if (willAttendClass) {
+          setTimeout(() => {
+            resolve("I will attend the class.");
+          }, 2000);
+        } else {
+          setTimeout(() => {
+            reject("I will not attend the class.");
+          }, 2000);
+        }
+      });
+
+      //   willAttendPromise.then(
+      //     (data) => {
+      //       console.log("My promise gets fulfilled :", data);
+      //     },
+      //     (error) => {
+      //       console.error("My promise gets rejected :", error);
+      //     }
+      //   );
+
+      willAttendPromise
+        .then((data) => {
+          console.log("My promise gets fulfilled :", data);
+        })
+        .catch((error) => {
+          console.error("My promise gets rejected :", error);
+        })
+        .finally(() => {
+          console.log("This will always run.");
+        });
+
+      //   console.log(willAttendPromise);
+    </script>
+  </body>
+</html>
