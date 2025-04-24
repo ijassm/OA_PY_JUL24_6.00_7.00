@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function fetchData(url) {
+        return fetch(url).then((data) => data.json());
+      }
+
+      function CardList() {
+        let cardItem;
+        fetchData("https://jsonplaceholder.typicode.com/users").then((data) => {
+          cardItem = data.map((data) => CardItem(data)).join("");
+
+          document.querySelector("body").innerHTML = `
+           <div class="card-list">
+             <h1>Card List</h1>
+            ${cardItem}
+           </div>`;
+        });
+      }
+
+      CardList();
+
+      function CardItem({ name, email, phone }) {
+        return `
+           <section class="card-item">
+             <div>Name : ${name}</div>
+             <div>Email: ${email}</div>
+             <div>Phone : ${phone}</div>
+             </section>
+             <hr>
+         `;
+      }
+    </script>
+  </body>
+</html>
